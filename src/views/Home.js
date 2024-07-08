@@ -1,22 +1,34 @@
-import React from 'react';
+import React from "react";
 // import sections
-import Hero from '../components/sections/Hero';
-import FeaturesTiles from '../components/sections/FeaturesTiles';
-import FeaturesSplit from '../components/sections/FeaturesSplit';
-import Testimonial from '../components/sections/Testimonial';
-import Cta from '../components/sections/Cta';
+import Hero from "../components/sections/Hero";
+import FeaturesTiles from "../components/sections/FeaturesTiles";
+import FeaturesSplit from "../components/sections/FeaturesSplit";
+import Testimonial from "../components/sections/Testimonial";
+import Cta from "../components/sections/Cta";
+import Button from "../components/elements/Button";
 
 const Home = () => {
-
   return (
     <>
       <Hero className="illustration-section-01" />
+      <Button
+        tag="a"
+        color="purple"
+        wideMobile
+      >
+        Read NPC's Lord
+      </Button>
       <FeaturesTiles />
-      <FeaturesSplit invertMobile topDivider imageFill className="illustration-section-02" />
+      <FeaturesSplit
+        invertMobile
+        topDivider
+        imageFill
+        className="illustration-section-02"
+      />
       <Testimonial topDivider />
       <Cta split />
     </>
   );
-}
+};
 
 export default Home;
