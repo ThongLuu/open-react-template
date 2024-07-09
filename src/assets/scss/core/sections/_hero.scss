@@ -9,14 +9,14 @@
 .hero-inner {
 
 	// Affects only hero full
-	> .hero-content + .hero-figure,
-	> .hero-figure + .hero-content {
+	>.hero-content+.hero-figure,
+	>.hero-figure+.hero-content {
 		margin-top: $hero--inner-padding-v_mobile;
 	}
 
-	> .hero-figure {
+	>.hero-figure {
 
-		> a {
+		>a {
 			display: inline-flex;
 			// prevents stretching
 			align-items: center;
@@ -25,7 +25,7 @@
 	}
 }
 
-@include media( '<=medium' ) {
+@include media('<=medium') {
 
 	.hero {
 
@@ -51,7 +51,7 @@
 	}
 }
 
-@include media( '>medium' ) {
+@include media('>medium') {
 
 	.hero {
 
@@ -64,9 +64,21 @@
 	.hero-inner {
 
 		// Affects only hero full
-		> .hero-content + .hero-figure,
-		> .hero-figure + .hero-content {
+		>.hero-content+.hero-figure,
+		>.hero-figure+.hero-content {
 			margin-top: $hero--inner-padding-v_desktop;
 		}
 	}
+}
+
+.hero-text {
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 600;
+	font-size: 34px;
+	line-height: 45px;
+	font-family: 'Fira Code', monospace;
+	letter-spacing: 0px;
+	color: #FFFFFF;
+	opacity: 1;
 }

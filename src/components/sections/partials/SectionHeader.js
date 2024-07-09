@@ -2,20 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const propTypes = {
-  data: PropTypes.shape({
-    title: PropTypes.string,
-    paragraph: PropTypes.string
-  }).isRequired,
-  children: PropTypes.node,
-  tag: PropTypes.oneOf(['h1', 'h2', 'h3'])
-}
-
-const defaultProps = {
-  children: null,
-  tag: 'h2'
-}
-
 const SectionHeader = ({
   className,
   data,
@@ -57,7 +43,17 @@ const SectionHeader = ({
   );
 }
 
-SectionHeader.propTypes = propTypes;
-SectionHeader.defaultProps = defaultProps;
+SectionHeader.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string,
+    paragraph: PropTypes.string
+  }).isRequired,
+  children: PropTypes.node,
+  tag: PropTypes.oneOf(['h1', 'h2', 'h3'])
+}
+SectionHeader.defaultProps = {
+  children: null,
+  tag: 'h2'
+}
 
 export default SectionHeader;

@@ -1,0 +1,23 @@
+.progress-bar {
+    background-color: #FFFFFF;
+    /* Màu nền trắng đậm */
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    color: black;
+    /* Màu chữ */
+    border-radius: 25px;
+    transition: width 0.1s ease-in-out;
+}
+
+.progress-container {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 20px 0;
+    width: 25%;
+    left: 35%;
+    top: 50%;
+    position: relative;
+}

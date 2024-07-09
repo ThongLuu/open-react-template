@@ -2,26 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const propTypes = {
-  tag: PropTypes.elementType,
-  color: PropTypes.string,
-  size: PropTypes.string,
-  loading: PropTypes.bool,
-  wide: PropTypes.bool,
-  wideMobile: PropTypes.bool,
-  disabled: PropTypes.bool
-}
-
-const defaultProps = {
-  tag: 'button',
-  color: '',
-  size: '',
-  loading: false,
-  wide: false,
-  wideMobile: false,
-  disabled: false
-}
-
 const Button = ({
   className,
   tag,
@@ -54,7 +34,14 @@ const Button = ({
   );
 }
 
-Button.propTypes = propTypes;
-Button.defaultProps = defaultProps;
+Button.propTypes = {
+  tag: PropTypes.elementType,
+  color: PropTypes.string,
+  size: PropTypes.string,
+  loading: PropTypes.bool,
+  wide: PropTypes.bool,
+  wideMobile: PropTypes.bool,
+  disabled: PropTypes.bool
+}
 
 export default Button;

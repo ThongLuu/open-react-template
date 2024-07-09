@@ -2,23 +2,6 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const propTypes = {
-  children: PropTypes.node,
-  handleClose: PropTypes.func.isRequired,
-  show: PropTypes.bool.isRequired,
-  closeHidden: PropTypes.bool,
-  video: PropTypes.string,
-  videoTag: PropTypes.oneOf(['iframe', 'video'])
-}
-
-const defaultProps = {
-  children: null,
-  show: false,
-  closeHidden: false,
-  video: '',
-  videoTag: 'iframe'
-}
-
 const Modal = ({
   className,
   children,
@@ -111,7 +94,13 @@ const Modal = ({
   )
 }
 
-Modal.propTypes = propTypes;
-Modal.defaultProps = defaultProps;
+Modal.propTypes = {
+  children: PropTypes.node,
+  handleClose: PropTypes.func.isRequired,
+  show: PropTypes.bool.isRequired,
+  closeHidden: PropTypes.bool,
+  video: PropTypes.string,
+  videoTag: PropTypes.oneOf(['iframe', 'video'])
+}
 
 export default Modal;

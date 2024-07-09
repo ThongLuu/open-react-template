@@ -1,18 +1,8 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import { SectionProps } from "../../utils/SectionProps";
-import ButtonGroup from "../elements/ButtonGroup";
-import Button from "../elements/Button";
 import Image from "../elements/Image";
 import Modal from "../elements/Modal";
-
-const propTypes = {
-  ...SectionProps.types,
-};
-
-const defaultProps = {
-  ...SectionProps.defaults,
-};
 
 const Hero = ({
   className,
@@ -58,7 +48,7 @@ const Hero = ({
           <div className="hero-content">
             <div className="container-xs">
               <p
-                className="m-0 mb-32 reveal-from-bottom"
+                className="m-0 mb-32 reveal-from-bottom hero-text"
                 data-reveal-delay="400"
               >
                 Once upon a time...
@@ -98,7 +88,6 @@ const Hero = ({
   );
 };
 
-Hero.propTypes = propTypes;
-Hero.defaultProps = defaultProps;
+Hero.propTypes = {...SectionProps.types};
 
 export default Hero;

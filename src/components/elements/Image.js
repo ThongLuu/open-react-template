@@ -1,23 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const propTypes = {
-  src: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.string
-  ]).isRequired,
-  width: PropTypes.number,
-  height: PropTypes.number,
-  alt: PropTypes.string
-}
-
-const defaultProps = {
-  src: undefined,
-  width: undefined,
-  height: undefined,
-  alt: undefined
-}
-
 const Image = ({
   className,
   src,
@@ -75,7 +58,14 @@ const Image = ({
   );
 }
 
-Image.propTypes = propTypes;
-Image.defaultProps = defaultProps;
+Image.propTypes = {
+  src: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string
+  ]).isRequired,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  alt: PropTypes.string
+}
 
 export default Image;
