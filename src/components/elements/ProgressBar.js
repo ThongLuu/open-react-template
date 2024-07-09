@@ -18,8 +18,10 @@ const ProgressBar = () => {
   }, []);
 
   return (
-    <div className="progress-container">
-      <div className="progress-bar" style={{ width: `${progress}%` }}>
+    <div className="progress-body-container">
+      <div className="progress-text">"Free will is a skem"</div>
+      <div className="progress-container">
+        <div className="progress-bar" style={{ width: `${progress}%` }}></div>
       </div>
     </div>
   );

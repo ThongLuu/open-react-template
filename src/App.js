@@ -32,9 +32,9 @@ const App = () => {
     document.body.classList.add("is-loaded");
     childRef.current.init();
     trackPage(page);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2300);
+    // setTimeout(() => {
+    //   setLoading(false);
+    // }, 2300);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
   console.log("loading", loading);
