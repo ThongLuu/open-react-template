@@ -23,7 +23,7 @@ const ButtonReadNPCLord = ({
   );
 
   const innerClasses = classNames(
-    "button-npc-lord-inner section-inner",
+    "button-npc-lord-inner",
     topDivider && "has-top-divider",
     bottomDivider && "has-bottom-divider"
   );

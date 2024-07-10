@@ -35,6 +35,8 @@ const App = () => {
     setTimeout(() => {
       setLoading(false);
     }, 2300);
+
+    return () => clearTimeout();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
   console.log("loading", loading);
@@ -46,7 +48,9 @@ const App = () => {
           <Switch>
             <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
           </Switch>
-          {loading && <LoadingPage show={loading} image="./../../assets/images/BG.png" />}
+          {loading && (
+            <LoadingPage show={loading} image="./../../assets/images/BG.png" />
+          )}
         </>
       )}
     />

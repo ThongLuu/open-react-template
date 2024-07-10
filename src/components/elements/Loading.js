@@ -1,6 +1,5 @@
 import React from "react";
 import ProgressBar from "./ProgressBar";
-import Image from "./Image";
 import backgroundImage from './../../assets/images/BG.png';
 
 const LoadingPage = (show, image) => {

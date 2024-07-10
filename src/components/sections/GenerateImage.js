@@ -1,8 +1,36 @@
 import * as fabric from "fabric";
 import React from "react";
 import { FabricJSCanvas, useFabricJSEditor } from "fabricjs-react";
+import classNames from "classnames";
+import { SectionProps } from "../../utils/SectionProps";
+import PropTypes from "prop-types";
 
-const StudentCard = () => {
+const GenerateImage = ({
+  className,
+  children,
+  topOuterDivider,
+  bottomOuterDivider,
+  topDivider,
+  bottomDivider,
+  hasBgColor,
+  invertColor,
+  ...props
+}) => {
+  const outerClasses = classNames(
+    "section",
+    topOuterDivider && "has-top-divider",
+    bottomOuterDivider && "has-bottom-divider",
+    hasBgColor && "has-bg-color",
+    invertColor && "invert-color",
+    className
+  );
+
+  const innerClasses = classNames(
+    "section-inner",
+    topDivider && "has-top-divider",
+    bottomDivider && "has-bottom-divider"
+  );
+
   const { editor, onReady } = useFabricJSEditor();
 
   const onAddCircle = () => editor?.addCircle();
@@ -15,8 +43,8 @@ const StudentCard = () => {
         "https://tenten.vn/tin-tuc/wp-content/uploads/2023/10/url-la-gi-3.jpg"
       ).then(function (img) {
         img.set({
-        //   left: 50,
-        //   top: 50,
+          //   left: 50,
+          //   top: 50,
           selectable: true, // Cho phép chỉnh sửa hình ảnh
           hasControls: true, // Hiển thị các điều khiển để thay đổi kích thước
           hasBorders: true, // Hiển thị viền khi chọn
@@ -30,12 +58,19 @@ const StudentCard = () => {
   };
 
   return (
-    <div>
-      <button onClick={onAddCircle}>Add circle</button>
-      <button onClick={onAddRectangle}>Add Rectangle</button>
-      <button onClick={onAddImage}>Add Image</button>
-      <FabricJSCanvas className="canvas-default" onReady={onReady} />
-    </div>
+    <section {...props} className={outerClasses}>
+      <div className="container">
+        <button onClick={onAddCircle}>Add circle</button>
+        <button onClick={onAddRectangle}>Add Rectangle</button>
+        <button onClick={onAddImage}>Add Image</button>
+        <FabricJSCanvas className="canvas-default" onReady={onReady} />
+      </div>
+    </section>
   );
 };
-export default StudentCard;
+
+GenerateImage.propTypes = {
+  children: PropTypes.node,
+  ...SectionProps.types,
+};
+export default GenerateImage;
